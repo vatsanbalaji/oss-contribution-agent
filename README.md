@@ -10,11 +10,11 @@ The project exists to answer a specific question empirically: can an AI-assisted
 
 ## How it works
 
-See `SKILL.md` for the full operating pipeline. In short: check a repo's AI-contribution policy → find an eligible issue → propose a fix and tests → run the test suite → generate a review report → stop and wait for explicit human approval → only then commit, push, and open a disclosed PR under a dedicated agent account.
+See [`skills/oss-contribution-agent/SKILL.md`](skills/oss-contribution-agent/SKILL.md) for the full operating pipeline. In short: check a repo's AI-contribution policy → find an eligible issue → propose a fix and tests → run the test suite → generate a review report → stop and wait for explicit human approval → only then commit, push, and open a disclosed PR under a dedicated agent account.
 
 ## Identity and disclosure
 
-All contributions are submitted under a dedicated GitHub account, separate from the maintainer's personal account, whose bio states plainly that it is an AI-assisted contribution agent operated and reviewed by a named human. Every pull request discloses AI involvement in its first sentence. See `repo-shortlist.md` for the list of repositories whose contribution policies were verified to explicitly permit this before any issue was attempted.
+All contributions are submitted under a dedicated GitHub account, separate from the maintainer's personal account, whose bio states plainly that it is an AI-assisted contribution agent operated and reviewed by a named human. Every pull request discloses AI involvement in its first sentence. See [`repo-shortlist.md`](repo-shortlist.md) for the list of repositories whose contribution policies were checked to explicitly permit this, and for the repositories excluded because their policies rule out agent-driven contributions. Policies change, so each run re-reads the target repo's live policy (including any `AGENTS.md` and PR template) before any issue is attempted, and follows that repo's own rules where they are stricter than this pipeline.
 
 ## Why the human approval step is real, not nominal
 
@@ -22,4 +22,4 @@ This skill's instructions alone can't guarantee a human reviews every change: a 
 
 ## Status
 
-See `audit-log.csv` for the running record of every attempt, outcome, and metric (test-pass rate, human-approval rate, PR-submission rate, merge rate) this pipeline has produced so far.
+See [`audit-log.csv`](audit-log.csv) for the running record of every attempt, outcome, and metric (test-pass rate, human-approval rate, PR-submission rate, merge rate) this pipeline has produced so far. `audit-log-template.csv` is an empty copy for starting your own.
